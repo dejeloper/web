@@ -1,6 +1,10 @@
 ---
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
+import Github from "../components/icons/GithubIcons.astro";
+import Twitter from "../components/icons/TwitterXIcon.astro";
+import Linkedin from "../components/icons/LinkedinIcon.astro";
+import Skills from "../components/skills/Skills.astro";
 ---
 
 <Layout title="Portafolio Jhonatan Guerrero">
@@ -9,10 +13,13 @@ import Layout from "../layouts/Layout.astro";
     <div id="home" class="flex flex-col h-screen relative mt-[80px]">
       <div
         id="container"
-        class="flex justify-center items-center relative h-[600px] px-10 border"
+        class="flex justify-center items-center relative h-[650px] px-10"
       >
-        <div id="content" class="">
-          <div id="hero-main" class="flex justify-center items-center gap-10">
+        <div id="content">
+          <div
+            id="hero-main"
+            class="flex flex-row justify-center items-center gap-10 mb-10"
+          >
             <div id="hero-text">
               <h3 class="text-3xl text-slate-600">
                 Bienvenida a mi portafolio
@@ -47,6 +54,30 @@ import Layout from "../layouts/Layout.astro";
 
                 <p class="text-slate-600">Desde Bogotá</p>
               </div>
+              <div
+                id="social_media"
+                class="flex flex-row items-center mt-6 text-slate-700 gap-2"
+              >
+                <p>
+                  <a
+                    href="https://www.linkedin.com/in/dejeloper/"
+                    target="_blank"
+                  >
+                    <Linkedin />
+                  </a>
+                </p>
+
+                <p>
+                  <a href="https://github.com/dejeloper" target="_blank">
+                    <Github />
+                  </a>
+                </p>
+                <p>
+                  <a href="https://twitter.com/dejeloper" target="_blank">
+                    <Twitter />
+                  </a>
+                </p>
+              </div>
             </div>
             <div id="hero-img" class="w-80">
               <picture>
@@ -58,6 +89,12 @@ import Layout from "../layouts/Layout.astro";
                 />
               </picture>
             </div>
+          </div>
+          <div
+            id="hero-skills"
+            class="flex justify-center items-center gap-10 bottom-0 absolute left-0 right-0"
+          >
+            <Skills />
           </div>
         </div>
       </div>
