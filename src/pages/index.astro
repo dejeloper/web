@@ -7,6 +7,38 @@ import Linkedin from "../components/icons/LinkedinIcon.astro";
 import Skills from "../components/skills/Skills.astro";
 ---
 
+<style>
+  #img-profile {
+    -webkit-animation: morph 6s ease-in-out infinite;
+    animation: morph 6s ease-in-out infinite;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid rgb(37 99 235);
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    position: relative;
+    transition: all 1s ease-in-out;
+  }
+
+  @keyframes morph {
+    0% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    25% {
+      border-radius: 30% 60% 70% 40%/60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 70% 30% 60% 40%/60% 30% 70% 40%;
+    }
+    75% {
+      border-radius: 60% 40% 70% 30%/60% 30% 70% 40%;
+    }
+    100% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+  }
+</style>
+
 <Layout title="Portafolio Jhonatan Guerrero">
   <main class="bg-gray-50 min-h-screen w-full">
     <Header title="dejeloper" />
@@ -82,6 +114,7 @@ import Skills from "../components/skills/Skills.astro";
             <div id="hero-img" class="w-80">
               <picture>
                 <img
+                  id="img-profile"
                   src="./images/me_01.jpg"
                   alt="Foto de Jhonatan Guerrero"
                   title="Foto de Jhonatan Guerrero"
