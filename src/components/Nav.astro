@@ -2,7 +2,9 @@
 const menu = ["Inicio", "Perfil", "Proyecto", "Contacto"];
 ---
 
-<nav>
+<nav
+  class="hidden md:flex flex-grow basis-0 w-full gap-x-8 text-lg md:justify-center font-medium"
+>
   <ul class="flex [&>li>a]:">
     {
       menu.map((item) => {
@@ -21,6 +23,31 @@ const menu = ["Inicio", "Perfil", "Proyecto", "Contacto"];
   </ul>
 </nav>
 
+<button
+  id="menu-toggle"
+  class="flex flex-grow basis-0 justify-end text-2xl md:hidden z-50 text-five"
+>
+  <span id="menu-icon">☰</span>
+</button>
+
+<nav
+  id="mobile-menu"
+  class="bg-black/80 backdrop-blur-2xl hidden w-full flex-col items-center text-center text-2xl fixed top-0 left-0 right-0 h-dvh place-content-center h-screen"
+>
+  {
+    menu.map((item) => {
+      return (
+        <a
+          href={`#${item.toLowerCase()}`}
+          class="my-1 px-4 py-2 font-semibold text-five hover:text-one hover:bg-five  marker:backdrop-blur-lg  rounded"
+        >
+          {item}
+        </a>
+      );
+    })
+  }
+</nav>
+
 <div
   id="menu-backdrop"
   class={`absolute bg-five backdrop-blur-lg rounded
@@ -34,6 +61,22 @@ const menu = ["Inicio", "Perfil", "Proyecto", "Contacto"];
 </div>
 
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+
+    if (!menuToggle || !mobileMenu || !menuIcon) {
+      return;
+    }
+
+    menuToggle.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("flex");
+      menuIcon.textContent = menuIcon.textContent === "☰" ? "✕" : "☰";
+    });
+  });
+
   const $listItem = document.querySelectorAll(".header li");
   const $menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement;
 

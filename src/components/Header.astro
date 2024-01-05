@@ -5,9 +5,14 @@ import Title from "../components/Title.astro";
 const { title } = Astro.props;
 ---
 
-<header
-  class="header absolute top-0 flex flex-row justify-between items-center py-4 px-10 mx-auto w-full"
->
-  <Title title={title} />
-  <Nav />
+<header class="header fixed top-0 z-50 w-full px-6 py-2">
+  <div class="mx-auto flex max-w-7xl items-center justify-between">
+    <div class="flex flex-grow basis-0">
+      <a href="/">
+        <Title title={title} />
+      </a>
+    </div>
+
+    <Nav />
+  </div>
 </header>
