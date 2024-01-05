@@ -9,6 +9,7 @@ module.exports = {
         three: "#1564BF",
         four: "#5e91f2",
         five: "#92b8ff",
+        gris: "#6b7280",
       },
     },
   },
