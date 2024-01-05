@@ -31,18 +31,24 @@ import FlagCol from "../components/icons/FlagColIcon.astro";
   }
 </style>
 
-<section class="flex flex-row justify-center items-center gap-10 mb-10">
+<section
+  id="#inicio"
+  class="flex flex-row justify-center items-center gap-10 my-10 w-full lg:w-[720px] mx-auto lg:p-0 px-20"
+>
   <div class="hero-text text-five">
-    <h2 class="text-3xl">Hola, este es mi portafolio</h2>
+    <h2 class="text-3xl">Hola, este es mi web</h2>
     <h1 class="text-3xl font-bold text-three">Jhonatan Guerrero</h1>
-    <h2 class="mt-3">Ingeniero de Sistemas y Desarrollador de Software.</h2>
-    <div class="flex items-center my-3 gap-2">
+    <article class="mt-3">
+      <h2>Ingeniero de Sistemas y Desarrollador de Software.</h2>
+      <h2>+10 años de experiencia.</h2>
+      <h2>Experto en planeación y gestión de soluciones.</h2>
+    </article>
+    <article class="flex items-center my-3 gap-2">
       <Location />
-
-      <p class="text-five">Desde Bogotá - Colombia</p>
+      <h2>Desde Bogotá - Colombia</h2>
       <FlagCol />
-    </div>
-    <div class="flex flex-row items-center mt-6 text-gris opacity-70 gap-2">
+    </article>
+    <div class="flex flex-row items-center gap-2 mt-6 text-gris opacity-70">
       <a
         href="https://www.linkedin.com/in/dejeloper/"
         target="_blank"
@@ -69,6 +75,22 @@ import FlagCol from "../components/icons/FlagColIcon.astro";
       >
         <Twitter />
       </a>
+    </div>
+    <div class="mt-3 text-gris opacity-90 w-auto">
+      <span
+        class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
+      >
+        @dejeloper
+      </span>
+
+      <span
+        class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
+        >dejeloper@gmail.com</span
+      >
+      <span
+        class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
+        >jhonatanguerrero@outlook.com</span
+      >
     </div>
   </div>
   <div class="hero-img w-80">

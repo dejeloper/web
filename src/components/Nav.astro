@@ -1,5 +1,5 @@
 ---
-const menu = ["Perfil", "Proyecto", "Contacto"];
+const menu = ["Inicio", "Perfil", "Proyecto", "Contacto"];
 ---
 
 <nav>
@@ -9,7 +9,7 @@ const menu = ["Perfil", "Proyecto", "Contacto"];
         return (
           <li>
             <a
-              href={`/${item.toLowerCase()}`}
+              href={`#${item.toLowerCase()}`}
               class="inline-block px-4 py-2 font-semibold text-five hover:text-one"
             >
               {item}
