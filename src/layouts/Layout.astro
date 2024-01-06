@@ -26,6 +26,10 @@ const { description, title } = Astro.props;
 </html>
 
 <style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: "Onest Variable", sans-serif;
     display: flex;
@@ -33,5 +37,11 @@ const { description, title } = Astro.props;
     min-height: 100vh;
     justify-content: center;
     background-color: #1f2024;
+  }
+
+  @media prefers-reduced-motion {
+    html {
+      scroll-behavior: auto;
+    }
   }
 </style>

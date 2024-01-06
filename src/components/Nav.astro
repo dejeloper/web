@@ -1,5 +1,22 @@
 ---
-const menu = ["Inicio", "Perfil", "Proyecto", "Contacto"];
+const menu = [
+  {
+    name: "Inicio",
+    slug: "top",
+  },
+  {
+    name: "Trayctoria",
+    slug: "trayectory",
+  },
+  {
+    name: "Proyectos",
+    slug: "proyects",
+  },
+  {
+    name: "Contacto",
+    slug: "contact",
+  },
+];
 ---
 
 <nav
@@ -11,10 +28,10 @@ const menu = ["Inicio", "Perfil", "Proyecto", "Contacto"];
         return (
           <li>
             <a
-              href={`#${item.toLowerCase()}`}
+              href={`#${item.slug.toString().toLowerCase()}`}
               class="inline-block px-4 py-2 font-semibold text-five hover:text-one"
             >
-              {item}
+              {item.name.toString()}
             </a>
           </li>
         );
@@ -38,10 +55,10 @@ const menu = ["Inicio", "Perfil", "Proyecto", "Contacto"];
     menu.map((item) => {
       return (
         <a
-          href={`#${item.toLowerCase()}`}
+          href={`#${item.name.toString().toLowerCase()}`}
           class="my-1 px-4 py-2 font-semibold text-five hover:text-one hover:bg-five  marker:backdrop-blur-lg  rounded"
         >
-          {item}
+          {item.name.toString()}
         </a>
       );
     })
