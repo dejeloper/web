@@ -2,35 +2,21 @@
 import GithubIcons from "../icons/GithubIcons.astro";
 import LinkedinIcon from "../icons/LinkedinIcon.astro";
 import TwitterXIcon from "../icons/TwitterXIcon.astro";
+import HeroIcon from "./HeroIcon.astro";
 ---
 
 <article
   class="flex flex-row md:justify-start justify-center items-center gap-2 mt-6 text-gris opacity-70"
 >
-  <a
-    href="https://www.linkedin.com/in/dejeloper/"
-    target="_blank"
-    class="hover:scale-125 transition ease-in-out duration-100"
-    title="Linkedin"
-  >
+  <HeroIcon title="Linkedin" href="https://www.linkedin.com/in/dejeloper/">
     <LinkedinIcon class="w-12 h-12" />
-  </a>
+  </HeroIcon>
 
-  <a
-    href="https://github.com/dejeloper"
-    target="_blank"
-    class="hover:scale-125 transition ease-in-out duration-100"
-    title="Github"
-  >
+  <HeroIcon title="Github" href="https://github.com/dejeloper/">
     <GithubIcons class="w-8 h-8" />
-  </a>
+  </HeroIcon>
 
-  <a
-    href="https://twitter.com/dejeloper"
-    target="_blank"
-    class="hover:scale-125 transition ease-in-out duration-100"
-    title="Twitter"
-  >
+  <HeroIcon title="Twitter" href="https://twitter.com/dejeloper/">
     <TwitterXIcon class="w-8 h-8" />
-  </a>
+  </HeroIcon>
 </article>
