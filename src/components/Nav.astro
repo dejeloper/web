@@ -5,7 +5,7 @@ const menu = [
     slug: "top",
   },
   {
-    name: "Trayctoria",
+    name: "Trayectoria",
     slug: "trayectory",
   },
   {
@@ -24,14 +24,14 @@ const menu = [
 >
   <ul class="flex [&>li>a]:">
     {
-      menu.map((item) => {
+      menu.map(({ slug, name }) => {
         return (
           <li>
             <a
-              href={`#${item.slug.toString().toLowerCase()}`}
+              href={`#${slug.toString().toLowerCase()}`}
               class="inline-block px-4 py-2 font-semibold text-five hover:text-one"
             >
-              {item.name.toString()}
+              {name.toString()}
             </a>
           </li>
         );
@@ -52,13 +52,13 @@ const menu = [
   class="bg-black/80 backdrop-blur-2xl hidden w-full flex-col items-center text-center text-2xl fixed top-0 left-0 right-0 h-dvh place-content-center h-full"
 >
   {
-    menu.map((item) => {
+    menu.map(({ slug, name }) => {
       return (
         <a
-          href={`#${item.name.toString().toLowerCase()}`}
-          class="my-1 px-4 py-2 font-semibold text-five hover:text-one hover:bg-five  marker:backdrop-blur-lg  rounded"
+          href={`#${slug.toString().toLowerCase()}`}
+          class="navMobileItem my-1 px-4 py-2 font-semibold text-five hover:text-one hover:bg-five marker:backdrop-blur-lg rounded"
         >
-          {item.name.toString()}
+          {name.toString()}
         </a>
       );
     })
@@ -113,5 +113,23 @@ const menu = [
       $menuBackDrop.style.opacity = "1";
       $menuBackDrop.style.visibility = "hidden";
     });
+  });
+
+  const closeMenu = (): void => {
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+
+    if (!mobileMenu || !menuIcon) {
+      return;
+    }
+
+    mobileMenu.classList.add("hidden");
+    mobileMenu.classList.remove("flex");
+    menuIcon.textContent = "☰";
+  };
+
+  const navMobileItem = document.querySelectorAll(".navMobileItem");
+  navMobileItem.forEach((item) => {
+    item.addEventListener("click", closeMenu);
   });
 </script>
