@@ -1,0 +1,42 @@
+<article
+  class="flex md:justify-start justify-center mt-3 text-gris opacity-90 w-auto"
+>
+  <span
+    id="user"
+    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
+  >
+    @dejeloper
+  </span>
+
+  <span
+    id="email1"
+    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
+    >dejeloper@gmail.com</span
+  >
+  <span
+    id="email2"
+    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
+    >jhonatanguerrero@outlook.com</span
+  >
+</article>
+
+<script>
+  const copyData = (el, removeAt = false) => {
+    const user = document.querySelector(el);
+    const text = user.innerText;
+    if (removeAt) navigator.clipboard.writeText(text.trim().replace("@", ""));
+    else navigator.clipboard.writeText(text.trim());
+
+    user.innerText = "Copiado!";
+    setTimeout(() => {
+      user.innerText = text;
+    }, 1000);
+  };
+
+  const userBadge = document.querySelector("#user");
+  userBadge.addEventListener("click", () => copyData("#user", true));
+  const email1Badge = document.querySelector("#email1");
+  email1Badge.addEventListener("click", () => copyData("#email1"));
+  const email2Badge = document.querySelector("#email2");
+  email2Badge.addEventListener("click", () => copyData("#email2"));
+</script>

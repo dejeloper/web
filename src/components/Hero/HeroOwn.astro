@@ -1,0 +1,32 @@
+---
+import FlagColIcon from "../icons/FlagColIcon.astro";
+import LocationIcon from "../icons/LocationIcon.astro";
+import HeroBadge from "./HeroBadge.astro";
+import HeroIconsRRSS from "./HeroIconsRRSS.astro";
+---
+
+<div class="hero-text text-five">
+  <h2 class="text-3xl md:text-start text-center">Hola, esta es mi web</h2>
+  <h1 class="text-3xl md:text-start text-center font-bold text-three">
+    Jhonatan Guerrero
+  </h1>
+  <article
+    class="flex flex-col md:text-start text-center mt-3 text-wrap font-semibold"
+  >
+    <h2>
+      <span class="block">
+        Ingeniero de Sistemas y Desarrollador de Software.
+      </span>
+      <span class="text-three">+10</span>
+      <span class=""> años de experiencia.</span>
+      <span class="block">Experto en planeación y gestión de soluciones.</span>
+    </h2>
+  </article>
+  <article class="flex items-center my-3 gap-2 md:justify-start justify-center">
+    <LocationIcon class="w-8 h-8" />
+    <h2>Desde Bogotá - Colombia</h2>
+    <FlagColIcon class="w-8 h-8" />
+  </article>
+  <HeroIconsRRSS />
+  <HeroBadge />
+</div>
