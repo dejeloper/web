@@ -1,6 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import HeroImage from "@/components/Hero/HeroImage.astro";
+import HeroText from "@/components/Hero/HeroText.astro";
 ---
 
 <Layout
@@ -8,6 +10,9 @@ import Hero from "../components/Hero.astro";
   description="Explora el perfil profesional de Jhonatan Guerrero, Ingeniero de Sistemas y Desarrollador de Software con más de 10 años de experiencia. Residiendo actualmente en Bogotá, Jhonatan, originario de Bucaramanga, Colombia, destaca por su compromiso con la excelencia en el diseño y desarrollo de soluciones tecnológicas innovadoras. Su experiencia abarca la gestión estratégica de proyectos, habilidades técnicas avanzadas y un enfoque ágil para adaptarse a las demandas dinámicas del sector. Descubre cómo su pasión por la resolución de problemas y su dedicación al aprendizaje continuo lo convierten en un activo valioso para proyectos tecnológicos desafiantes. ¡Conoce más sobre su trayectoria y contribuciones a través de esta plataforma!"
 >
   <main class="mx-auto mt-14">
-    <Hero />
+    <SectionContainer>
+      <HeroText />
+      <HeroImage />
+    </SectionContainer>
   </main>
 </Layout>
