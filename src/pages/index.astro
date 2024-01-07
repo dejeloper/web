@@ -4,6 +4,8 @@ import SectionContainer from "@/components/SectionContainer.astro";
 import HeroImage from "@/components/Hero/HeroImage.astro";
 import HeroText from "@/components/Hero/HeroText.astro";
 import Experence from "@/components/Experence.astro";
+import Contact from "@/components/Contact.astro";
+import Skills from "@/components/Skills.astro";
 
 const title = "Portafolio Jhonatan Guerrero";
 const description =
@@ -15,6 +17,10 @@ const description =
     <SectionContainer class="flex-col-reverse md:flex-row my-10" id="top">
       <HeroText />
       <HeroImage />
+    </SectionContainer>
+
+    <SectionContainer id="skills" class="">
+      <Skills />
     </SectionContainer>
 
     <SectionContainer id="trayectory" class="">
