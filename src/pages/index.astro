@@ -13,18 +13,28 @@ const description =
 ---
 
 <Layout title={title} description={description}>
-  <main class="mx-auto mt-14">
-    <SectionContainer class="flex-col-reverse md:flex-row my-10" id="top">
-      <HeroText />
-      <HeroImage />
-    </SectionContainer>
+  <main class="mx-auto" id="top">
+    <div
+      class="min-h-screen flex flex-col justify-center items-center md:my-0 my-[180px]"
+    >
+      <SectionContainer
+        class="flex-col-reverse md:flex-row my-10 md:p-0 px-10"
+        id="inicio"
+      >
+        <HeroText />
+        <HeroImage />
+      </SectionContainer>
 
-    <SectionContainer id="skills" class="">
-      <Skills />
-    </SectionContainer>
+      <SectionContainer id="skills" class="p-4">
+        <Skills />
+      </SectionContainer>
+    </div>
 
-    <SectionContainer id="trayectory" class="">
+    <SectionContainer id="experience" class="pt-8 px-4">
       <Experence />
     </SectionContainer>
+    <!-- <SectionContainer id="contact" class="">
+      <Contact />
+    </SectionContainer> -->
   </main>
 </Layout>

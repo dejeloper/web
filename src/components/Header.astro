@@ -5,7 +5,7 @@ import Title from "./Title.astro";
 const { title } = Astro.props;
 ---
 
-<header class="header fixed top-0 z-50 w-full px-6 py-2">
+<header id="header-bar" class="header fixed top-0 z-50 w-full px-6 py-2">
   <div class="mx-auto flex max-w-7xl items-center justify-between">
     <div class="flex flex-grow basis-0">
       <a href="/">
@@ -16,3 +16,21 @@ const { title } = Astro.props;
     <Nav />
   </div>
 </header>
+
+<style>
+  #header-bar {
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 200px;
+  }
+
+  @keyframes blur {
+    to {
+      box-shadow:
+        0px 5px 50px -5px #1f2024,
+        0px 0px 0px 0px #7f83945e;
+      background: rbga(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+  }
+</style>
