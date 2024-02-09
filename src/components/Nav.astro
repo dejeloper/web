@@ -12,10 +12,6 @@ const menu = [
     name: "Proyectos",
     slug: "proyects",
   },
-  {
-    name: "Contacto",
-    slug: "contact",
-  },
 ];
 ---
 
@@ -95,7 +91,7 @@ const menu = [
   });
 
   const $listItem = document.querySelectorAll(".header li");
-  const $menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement;
+  const $menuBackDrop = document.querySelector("#menu-backdrop");
 
   $listItem.forEach((item) => {
     item.addEventListener("mouseenter", () => {
@@ -115,7 +111,7 @@ const menu = [
     });
   });
 
-  const closeMenu = (): void => {
+  const closeMenu = () => {
     const mobileMenu = document.getElementById("mobile-menu");
     const menuIcon = document.getElementById("menu-icon");
 
