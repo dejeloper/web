@@ -3,8 +3,8 @@ import ProjectsItem from "./ProjectsItem.astro";
 import { projects } from "@/data/projects";
 ---
 
-<h3 class="text-3xl mt-12">Proyectos</h3>
-<div class="w-full lg:w-3/4 my-4 cursor-default">
+<h3 class="text-3xl md:mt-12 md:mb-8 my-4 text-gray-100 mx-auto">Proyectos</h3>
+<div class="w-full md:w-3/4 my-4 cursor-default">
   <div class="grid md:grid-cols-2 grid-col-1 gap-6">
     {projects.map((project) => <ProjectsItem {...project} />)}
   </div>

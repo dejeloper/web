@@ -5,13 +5,13 @@ import HeroIconsRRSS from "./HeroIconsRRSS.astro";
 import FlagColIcon from "@/icons/FlagColIcon.astro";
 ---
 
-<div class="hero-text text-five">
-  <h2 class="text-3xl md:text-start text-center">Hola, esta es mi web</h2>
-  <h1 class="text-3xl md:text-start text-center font-bold text-three">
-    Jhonatan Guerrero
-  </h1>
+<div class="flex flex-col justify-center md:justify-start hero-text text-five">
+  <h1 class="sr-only">Jhonatan Guerrero</h1>
+  <h2 class="text-3xl md:text-start text-center">
+    Soy <span class="font-bold text-three">Jhonatan Guerrero</span>
+  </h2>
   <article
-    class="flex flex-col md:text-start text-center mt-3 text-wrap font-semibold"
+    class="flex flex-col md:text-start text-center md:mt-3 text-wrap font-semibold"
   >
     <h2>
       <span class="block">
@@ -19,7 +19,6 @@ import FlagColIcon from "@/icons/FlagColIcon.astro";
       </span>
       <span class="text-three">+10</span>
       <span class=""> años de experiencia.</span>
-      <span class="block">Experto en planeación y gestión de soluciones.</span>
     </h2>
   </article>
   <article class="flex items-center my-3 gap-2 md:justify-start justify-center">

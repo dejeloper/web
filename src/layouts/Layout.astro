@@ -10,7 +10,7 @@ const { description, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es-co">
+<html lang="es-co" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -19,25 +19,23 @@ const { description, title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="relative w-full">
+  <body class="relative flex flex-col justify-center">
     <Header title="dejeloper" />
     <slot />
   </body>
 </html>
 
 <style is:global>
+  * {
+    box-sizing: border-box;
+  }
   html {
     scroll-behavior: smooth;
   }
 
   body {
     font-family: "Onest Variable", sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: center;
     background-color: #1f2024;
-    width: 100%;
     overflow-x: hidden;
   }
 
