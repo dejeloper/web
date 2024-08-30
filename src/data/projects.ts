@@ -11,7 +11,7 @@ export interface IProject {
 export const projects: IProject[] = [
   {
     name: "Quiz de Fútbol",
-    image: "nextjs-zustand-quiz.png",
+    image: "nextjs-zustand-quiz.webp",
     repository: "https://github.com/dejeloper/nextjs-zustand-quiz",
     deploy: "https://nextjs-zustand-quiz.vercel.app",
     description:
@@ -21,7 +21,7 @@ export const projects: IProject[] = [
   },
   {
     name: "Búsqueda de Películas",
-    image: "busqueda-peliculas.png",
+    image: "busqueda-peliculas.webp",
     repository: "busqueda-peliculas",
     deploy: "https://busqueda-peliculas.vercel.app",
     description:
@@ -31,7 +31,7 @@ export const projects: IProject[] = [
   },
   {
     name: "Paycommerce",
-    image: "paycommerce.png",
+    image: "paycommerce.webp",
     repository: "https://github.com/dejeloper/paycommerce",
     deploy: "https://paycommerce.vercel.app/products",
     description:
@@ -41,7 +41,7 @@ export const projects: IProject[] = [
   },
   {
     name: "Ziel",
-    image: "ziel-mvp.png",
+    image: "ziel-mvp.webp",
     repository: "https://github.com/dejeloper/ziel-mvp",
     deploy: "https://ziel-mvp.vercel.app/home",
     description:
@@ -51,7 +51,7 @@ export const projects: IProject[] = [
   },
   {
     name: "Opplanner",
-    image: "opplanner.png",
+    image: "opplanner.webp",
     repository: "opplanner",
     deploy: "https://opplanner-dejeloper.vercel.app",
     description:
@@ -61,7 +61,7 @@ export const projects: IProject[] = [
   },
   {
     name: "POS General",
-    image: "POS.png",
+    image: "POS.webp",
     repository: "https://github.com/dejeloper/POS",
     deploy: "https://pos-general.vercel.app/home",
     description:
