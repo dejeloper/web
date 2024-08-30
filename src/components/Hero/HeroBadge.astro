@@ -1,35 +1,42 @@
 <article
   class="flex md:justify-start justify-center mt-3 text-gris opacity-90 w-auto"
 >
-  <span
-    id="user"
-    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
-  >
-    @dejeloper
-  </span>
+  <div class="w-96">
+    <span
+      id="user"
+      class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
+    >
+      @dejeloper
+    </span>
 
-  <span
-    id="email1"
-    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
-    >dejeloper@gmail.com</span
-  >
-  <span
-    id="email2"
-    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
-    >jhonatanguerrero@outlook.com</span
-  >
+    <span
+      id="email1"
+      class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
+      >dejeloper@gmail.com</span
+    >
+    <span
+      id="email2"
+      class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
+      >jhonatanguerrero@outlook.com</span
+    >
+    <span
+      id="copiado"
+      class="hidden text-gray-100 text-xs font-medium w-auto my-4 rounded cursor-pointer"
+    >
+      Copiado!
+    </span>
+  </div>
 </article>
-
 <script>
   const copyData = (el, removeAt = false) => {
     const user = document.querySelector(el);
     const text = user.innerText;
     if (removeAt) navigator.clipboard.writeText(text.trim().replace("@", ""));
     else navigator.clipboard.writeText(text.trim());
-
-    user.innerText = "Copiado!";
+    const copy = document.querySelector("#copiado") as HTMLSpanElement;
+    copy.classList.toggle("hidden");
     setTimeout(() => {
-      user.innerText = text;
+      copy.classList.toggle("hidden");
     }, 1000);
   };
 

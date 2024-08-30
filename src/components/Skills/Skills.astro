@@ -1,0 +1,78 @@
+---
+import HtmlIcon from "@/icons/skills/HtmlIcon.astro";
+import SkillsIcon from "../Skills/SkillsIcon.astro";
+import CssIcon from "@/icons/skills/CssIcon.astro";
+import JsIcon from "@/icons/skills/JsIcon.astro";
+import AngularIcon from "@/icons/skills/AngularIcon.astro";
+import ReactIcon from "@/icons/skills/ReactIcon.astro";
+import TailwindIcon from "@/icons/skills/TailwindIcon.astro";
+import CsharpIcon from "@/icons/skills/CsharpIcon.astro";
+import MysqlIcon from "@/icons/skills/MysqlIcon.astro";
+import PhpIcon from "@/icons/skills/PhpIcon.astro";
+import NodeIcon from "@/icons/skills/NodeIcon.astro";
+import SqlServerIcon from "@/icons/skills/SqlServerIcon.astro";
+import DockerIcon from "@/icons/skills/DockerIcon.astro";
+---
+
+<section
+  class="flex justify-center items-center gap-10 bg-two/30 rounded-lg w-full"
+>
+  <div class="flex items-center justify-end select-none">
+    <h3 class="text-3xl text-five mr-4 py-5 px-3 border-r border-four">
+      Habilidades
+    </h3>
+    <section class="flex flex-col">
+      <div class="flex p-2">
+        <SkillsIcon title="HTML">
+          <HtmlIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="CSS">
+          <CssIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="Javascript">
+          <JsIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="Angular">
+          <AngularIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="React">
+          <ReactIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="Tailwind">
+          <TailwindIcon />
+        </SkillsIcon>
+      </div>
+
+      <div class="flex p-2">
+        <SkillsIcon title="C#">
+          <CsharpIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="Mysql" class="bg-slate-200 rounded">
+          <MysqlIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="PHP">
+          <PhpIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="Node">
+          <NodeIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="SQL Server" class="bg-slate-200 rounded">
+          <SqlServerIcon />
+        </SkillsIcon>
+
+        <SkillsIcon title="Docker" class="bg-slate-200 rounded">
+          <DockerIcon />
+        </SkillsIcon>
+      </div>
+    </section>
+  </div>
+</section>

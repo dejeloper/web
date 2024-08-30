@@ -1,0 +1,68 @@
+---
+const { empresa, actual, inicio_fecha, inicio, fechas, cargos } = Astro.props;
+
+const iniciom = new Date(inicio_fecha);
+const fin = new Date();
+
+let anos = fin.getFullYear() - iniciom.getFullYear();
+let meses = fin.getMonth() - iniciom.getMonth();
+let dias = fin.getDate() - iniciom.getDate();
+
+if (dias < 0) {
+  meses--;
+  const diasEnMesAnterior = new Date(
+    fin.getFullYear(),
+    fin.getMonth(),
+    0
+  ).getDate();
+  dias += diasEnMesAnterior;
+}
+
+if (meses < 0) {
+  anos--;
+  meses += 12;
+}
+
+const duracion = (
+  actual ? `${anos} años y ${meses} meses` : `+${anos} años`
+).replaceAll("y 0 meses", "");
+---
+
+<div class="relative pl-8 sm:pl-32 py-4 group">
+  <div class="font-caveat font-medium text-2xl text-four mb-1 sm:mb-0">
+    {empresa}
+  </div>
+  <div
+    class={`flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5 ` +
+      (actual ? "after:bg-emerald-600  " : " after:bg-red-500")}
+  >
+    <time
+      class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-sky-600 bg-sky-100 rounded-full"
+      >{inicio}</time
+    >
+    <div class="text-sm text-gray-300">
+      {fechas}
+      {
+        actual && (
+          <div class="my-2">
+            <span class="text-bold text-five me-4"> {duracion}</span>
+            <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+              Actualmente
+            </span>
+          </div>
+        )
+      }
+    </div>
+  </div>
+  {
+    cargos.map(({ cargo, duracion, descripcion }) => (
+      <section class="mb-4">
+        <div class="text-xl font-bold text-white">{cargo}</div>
+        <h3 class="text-sm font-semibold text-four">{duracion}</h3>
+        <p class="text-base font-normal text-gray-400 text-balance">
+          {descripcion}
+        </p>
+      </section>
+    ))
+  }
+</div>
