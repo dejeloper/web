@@ -12,7 +12,7 @@ export const projects: IProject[] = [
   {
     name: "Quiz de Fútbol",
     image: "nextjs-zustand-quiz.webp",
-    repository: "https://github.com/dejeloper/nextjs-zustand-quiz",
+    repository: "nextjs-zustand-quiz",
     deploy: "https://nextjs-zustand-quiz.vercel.app",
     description:
       "Juego de preguntas y respuestas sobre fútbol en el que los usuarios pueden poner a prueba sus conocimientos futbolísticos.",
@@ -32,7 +32,7 @@ export const projects: IProject[] = [
   {
     name: "Paycommerce",
     image: "paycommerce.webp",
-    repository: "https://github.com/dejeloper/paycommerce",
+    repository: "paycommerce",
     deploy: "https://paycommerce.vercel.app/products",
     description:
       "Plataforma de comercio electrónico que facilita la gestión de productos y pagos en línea. Integrada con Stripe para procesar pagos de manera segura.",
@@ -42,7 +42,7 @@ export const projects: IProject[] = [
   {
     name: "Ziel",
     image: "ziel-mvp.webp",
-    repository: "https://github.com/dejeloper/ziel-mvp",
+    repository: "ziel-mvp",
     deploy: "https://ziel-mvp.vercel.app/home",
     description:
       "Aplicación orientada a la gestión de metas y objetivos. Permite a los usuarios definir, seguir y completar objetivos a través de un panel de control sencillo e intuitivo.",
@@ -62,7 +62,7 @@ export const projects: IProject[] = [
   {
     name: "POS General",
     image: "POS.webp",
-    repository: "https://github.com/dejeloper/POS",
+    repository: "POS",
     deploy: "https://pos-general.vercel.app/home",
     description:
       "Sistema de punto de venta (POS) diseñado para pequeñas y medianas empresas que facilita la gestión de ventas, inventarios y clientes.",
