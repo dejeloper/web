@@ -25,7 +25,7 @@ export const projects: IProject[] = [
     repository: "busqueda-peliculas",
     deploy: "https://busqueda-peliculas.vercel.app",
     description:
-      "Aplicación para buscar y explorar películas utilizando una API pública. Permite a los usuarios buscar títulos, obtener detalles de películas y ver sus imágenes promocionales.",
+      "Aplicación para buscar películas utilizando una API pública por títulos y ver sus imágenes promocionales.",
     stack: ["HTML", "CSS", "Javascript", "React Js", "Vite"],
     status: "Finalizado",
   },

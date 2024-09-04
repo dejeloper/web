@@ -4,16 +4,8 @@ const { name, repository, deploy, description, stack, image, status } =
 ---
 
 <div
-  class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  class="bg-[#f9faff] border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
 >
-  <a href={deploy} target="_blank">
-    <img
-      class="rounded-t-lg"
-      src=`./images/projects/${image}`
-      ,
-      alt=`${name} screenshot`
-    />
-  </a>
   <div class="p-5">
     <a href={deploy} target="_blank">
       <h5
@@ -22,7 +14,14 @@ const { name, repository, deploy, description, stack, image, status } =
         {name}
       </h5>
     </a>
-    <div class="mb-3">
+    <a href={deploy} target="_blank">
+      <img
+        class="rounded-t-lg my-1 mx-auto h-48 border border-slate-500"
+        src=`./images/projects/${image}`
+        alt=`${name} screenshot`
+      />
+    </a>
+    <div class="my-3">
       {
         stack &&
           stack.map((l: string) => (
@@ -32,7 +31,7 @@ const { name, repository, deploy, description, stack, image, status } =
           ))
       }
     </div>
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col justify-between items-center h-60">
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
         {description}
       </p>
