@@ -3,20 +3,46 @@ import LinkedinIcon from "@/icons/LinkedinIcon.astro";
 import GithubIcons from "@/icons/GithubIcons.astro";
 import TwitterXIcon from "@/icons/TwitterXIcon.astro";
 import HeroIcon from "./HeroIcon.astro";
+import BlogIcon from "@/icons/BlogIcon.astro";
+import TecnologyIcon from "@/icons/TecnologyIcon.astro";
 ---
 
 <article
   class="flex flex-row md:justify-start justify-center items-center gap-2 md:mt-6 mt-0 text-gris opacity-70"
 >
-  <HeroIcon title="Linkedin" href="https://www.linkedin.com/in/dejeloper/">
+  <HeroIcon
+    title="Linkedin"
+    href="https://www.linkedin.com/in/dejeloper/"
+    target="_blank"
+  >
     <LinkedinIcon class="w-12 h-12" />
   </HeroIcon>
 
-  <HeroIcon title="Github" href="https://github.com/dejeloper/">
+  <HeroIcon title="Github" href="https://github.com/dejeloper/" target="_blank">
     <GithubIcons class="w-8 h-8" />
   </HeroIcon>
 
-  <HeroIcon title="Twitter" href="https://twitter.com/dejeloper/">
+  <HeroIcon
+    title="Twitter"
+    href="https://twitter.com/dejeloper/"
+    target="_blank"
+  >
     <TwitterXIcon class="w-8 h-8" />
+  </HeroIcon>
+
+  <HeroIcon
+    title="Blog Cuentos"
+    href="https://blog.dejeloper.com/"
+    target="_blank"
+  >
+    <BlogIcon class="w-8 h-8" />
+  </HeroIcon>
+
+  <HeroIcon
+    title="Blog de Tecnología"
+    href="https://blog-dej.vercel.app/"
+    target="_blank"
+  >
+    <TecnologyIcon class="w-8 h-8" />
   </HeroIcon>
 </article>
