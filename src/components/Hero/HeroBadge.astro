@@ -1,3 +1,8 @@
+---
+import CopyIcon from "@/icons/CopyIcon.astro";
+import CheckIcon from "@/icons/CheckIcon.astro";
+---
+
 <article
   class="flex flex-wrap md:justify-start justify-center gap-y-2 mt-3 text-gris opacity-90 md:w-96 w-full"
 >
@@ -15,14 +20,19 @@
   >
   <span
     id="email2"
-    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
+    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer items-center flex"
     >jhonatanguerrero@outlook.com</span
   >
   <span
-    id="copiado"
-    class="hidden text-gray-100 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
+    class="copiado hidden text-gray-100 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
   >
-    Copiado!
+    <CheckIcon class="w-4 h-4 inline-block" />
+  </span>
+  <span
+    id="email2"
+    class="copiado text-gray-100 text-xs font-medium me-2 px-2.5 py-0.5 rounded cursor-pointer"
+  >
+    <CopyIcon class="w-4 h-4 inline-block" />
   </span>
 </article>
 <script>
@@ -31,17 +41,23 @@
     const text = user.innerText;
     if (removeAt) navigator.clipboard.writeText(text.trim().replace("@", ""));
     else navigator.clipboard.writeText(text.trim());
-    const copy = document.querySelector("#copiado") as HTMLSpanElement;
-    copy.classList.toggle("hidden");
-    setTimeout(() => {
+    const copies = document.querySelectorAll(".copiado");
+    copies.forEach((copy) => {
       copy.classList.toggle("hidden");
-    }, 1000);
+      setTimeout(() => {
+        copy.classList.toggle("hidden");
+      }, 1000);
+    });
   };
 
   const userBadge = document.querySelector("#user");
   userBadge.addEventListener("click", () => copyData("#user", true));
+
   const email1Badge = document.querySelector("#email1");
   email1Badge.addEventListener("click", () => copyData("#email1"));
-  const email2Badge = document.querySelector("#email2");
-  email2Badge.addEventListener("click", () => copyData("#email2"));
+
+  const email2Badges = document.querySelectorAll("#email2");
+  email2Badges.forEach((badge) => {
+    badge.addEventListener("click", () => copyData("#email2"));
+  });
 </script>
