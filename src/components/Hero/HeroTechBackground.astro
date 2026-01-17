@@ -1,70 +1,19 @@
 ---
-import AngularIcon from "@/icons/skills/AngularIcon.astro";
-import AstroIcon from "@/icons/skills/AstroIcon.astro";
-import BunjsIcon from "@/icons/skills/BunjsIcon.astro";
-import CsharpIcon from "@/icons/skills/CsharpIcon.astro";
-import CssIcon from "@/icons/skills/CssIcon.astro";
-import DenoIcon from "@/icons/skills/DenoIcon.astro";
-import DockerIcon from "@/icons/skills/DockerIcon.astro";
-import GitIcons from "@/icons/skills/GitIcon.astro";
-import GithubIcons from "@/icons/GithubIcons.astro";
-import HtmlIcon from "@/icons/skills/HtmlIcon.astro";
-import JavaIcon from "@/icons/skills/JavaIcon.astro";
-import JsIcon from "@/icons/skills/JsIcon.astro";
-import MysqlIcon from "@/icons/skills/MysqlIcon.astro";
-import MongodbIcon from "@/icons/skills/MongodbIcon.astro";
-import NestjsIcon from "@/icons/skills/NestjsIcon.astro";
-import NextjsIcon from "@/icons/skills/NextjsIcon.astro";
-import NodeIcon from "@/icons/skills/NodeIcon.astro";
-import PhpIcon from "@/icons/skills/PhpIcon.astro";
-import PlaywrightIcon from "@/icons/skills/PlaywrightIcon.astro";
-import PostgreSQLIcon from "@/icons/skills/PostgreSQLIcon.astro";
-import PythonIcon from "@/icons/skills/PythonIcon.astro";
-import ReactIcon from "@/icons/skills/ReactIcon.astro";
-import RedisIcon from "@/icons/skills/RedisIcon.astro";
-import SqlServerIcon from "@/icons/skills/SqlServerIcon.astro";
-import SupebaseIcon from "@/icons/skills/SupebaseIcon.astro";
-import TailwindIcon from "@/icons/skills/TailwindIcon.astro";
-import TypeScriptIcon from "@/icons/skills/TypeScriptIcon.astro";
-import ViteIcon from "@/icons/skills/ViteIcon.astro";
-import VitestIcon from "@/icons/skills/VitestIcon.astro";
+import { ICONS } from "@/icons/icons.astro";
+
+type TechName = keyof typeof ICONS;
 
 interface TechIcon {
-  component: any;
-  name: string;
+  name: TechName;
+  component: (props: any) => any;
 }
 
-const techStack: TechIcon[] = [
-  { component: AngularIcon, name: "angular" },
-  { component: AstroIcon, name: "astro" },
-  { component: BunjsIcon, name: "bunjs" },
-  { component: CsharpIcon, name: "csharp" },
-  { component: CssIcon, name: "css" },
-  { component: DenoIcon, name: "deno" },
-  { component: DockerIcon, name: "docker" },
-  { component: GitIcons, name: "git" },
-  { component: GithubIcons, name: "github" },
-  { component: HtmlIcon, name: "html" },
-  { component: JavaIcon, name: "java" },
-  { component: JsIcon, name: "javascript" },
-  { component: MysqlIcon, name: "mysql" },
-  { component: MongodbIcon, name: "mongodb" },
-  { component: NestjsIcon, name: "nestjs" },
-  { component: NextjsIcon, name: "nextjs" },
-  { component: NodeIcon, name: "nodejs" },
-  { component: PhpIcon, name: "php" },
-  { component: PlaywrightIcon, name: "playwright" },
-  { component: PostgreSQLIcon, name: "postgresql" },
-  { component: PythonIcon, name: "python" },
-  { component: ReactIcon, name: "react" },
-  { component: RedisIcon, name: "redis" },
-  { component: SqlServerIcon, name: "sqlserver" },
-  { component: SupebaseIcon, name: "supabase" },
-  { component: TailwindIcon, name: "tailwindcss" },
-  { component: TypeScriptIcon, name: "typescript" },
-  { component: ViteIcon, name: "vite" },
-  { component: VitestIcon, name: "vitest" },
-];
+const techStack: TechIcon[] = Object.entries(ICONS).map(
+  ([name, component]) => ({
+    name: name as TechName,
+    component,
+  }),
+);
 
 const generateBackgroundPattern = (iconCount: number, cols: number) => {
   const pattern = [];
