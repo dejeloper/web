@@ -1,22 +1,33 @@
 ---
 import AngularIcon from "@/icons/skills/AngularIcon.astro";
 import AstroIcon from "@/icons/skills/AstroIcon.astro";
+import BunjsIcon from "@/icons/skills/BunjsIcon.astro";
 import CsharpIcon from "@/icons/skills/CsharpIcon.astro";
 import CssIcon from "@/icons/skills/CssIcon.astro";
+import DenoIcon from "@/icons/skills/DenoIcon.astro";
 import DockerIcon from "@/icons/skills/DockerIcon.astro";
+import GitIcons from "@/icons/skills/GitIcon.astro";
+import GithubIcons from "@/icons/GithubIcons.astro";
 import HtmlIcon from "@/icons/skills/HtmlIcon.astro";
 import JavaIcon from "@/icons/skills/JavaIcon.astro";
 import JsIcon from "@/icons/skills/JsIcon.astro";
 import MysqlIcon from "@/icons/skills/MysqlIcon.astro";
+import MongodbIcon from "@/icons/skills/MongodbIcon.astro";
+import NestjsIcon from "@/icons/skills/NestjsIcon.astro";
 import NextjsIcon from "@/icons/skills/NextjsIcon.astro";
 import NodeIcon from "@/icons/skills/NodeIcon.astro";
 import PhpIcon from "@/icons/skills/PhpIcon.astro";
+import PlaywrightIcon from "@/icons/skills/PlaywrightIcon.astro";
 import PostgreSQLIcon from "@/icons/skills/PostgreSQLIcon.astro";
 import PythonIcon from "@/icons/skills/PythonIcon.astro";
 import ReactIcon from "@/icons/skills/ReactIcon.astro";
+import RedisIcon from "@/icons/skills/RedisIcon.astro";
 import SqlServerIcon from "@/icons/skills/SqlServerIcon.astro";
+import SupebaseIcon from "@/icons/skills/SupebaseIcon.astro";
 import TailwindIcon from "@/icons/skills/TailwindIcon.astro";
 import TypeScriptIcon from "@/icons/skills/TypeScriptIcon.astro";
+import ViteIcon from "@/icons/skills/ViteIcon.astro";
+import VitestIcon from "@/icons/skills/VitestIcon.astro";
 
 interface TechIcon {
   component: any;
@@ -26,22 +37,33 @@ interface TechIcon {
 const techStack: TechIcon[] = [
   { component: AngularIcon, name: "angular" },
   { component: AstroIcon, name: "astro" },
+  { component: BunjsIcon, name: "bunjs" },
   { component: CsharpIcon, name: "csharp" },
   { component: CssIcon, name: "css" },
+  { component: DenoIcon, name: "deno" },
   { component: DockerIcon, name: "docker" },
+  { component: GitIcons, name: "git" },
+  { component: GithubIcons, name: "github" },
   { component: HtmlIcon, name: "html" },
   { component: JavaIcon, name: "java" },
   { component: JsIcon, name: "javascript" },
   { component: MysqlIcon, name: "mysql" },
+  { component: MongodbIcon, name: "mongodb" },
+  { component: NestjsIcon, name: "nestjs" },
   { component: NextjsIcon, name: "nextjs" },
   { component: NodeIcon, name: "nodejs" },
   { component: PhpIcon, name: "php" },
+  { component: PlaywrightIcon, name: "playwright" },
   { component: PostgreSQLIcon, name: "postgresql" },
   { component: PythonIcon, name: "python" },
   { component: ReactIcon, name: "react" },
+  { component: RedisIcon, name: "redis" },
   { component: SqlServerIcon, name: "sqlserver" },
+  { component: SupebaseIcon, name: "supabase" },
   { component: TailwindIcon, name: "tailwindcss" },
   { component: TypeScriptIcon, name: "typescript" },
+  { component: ViteIcon, name: "vite" },
+  { component: VitestIcon, name: "vitest" },
 ];
 
 const generateBackgroundPattern = (iconCount: number, cols: number) => {
@@ -76,14 +98,14 @@ const backgroundPattern = generateBackgroundPattern(120, 12);
   aria-hidden="true"
 >
   <div
-    class="absolute inset-0 grid grid-cols-12 gap-4 p-6 opacity-40"
+    class="absolute inset-0 grid grid-cols-12 gap-4 p-6 opacity-30"
     style="grid-template-rows: repeat(10, minmax(0, 1fr));"
   >
     {
       backgroundPattern.map(
         ({ component: IconComponent, name, position }, index) => (
           <div
-            class="hero-tech-icon flex items-center justify-center grayscale transition-all duration-300 ease-out drop-shadow-[0_0_10px_rgba(94,145,242,0.3)] p-2"
+            class="hero-tech-icon flex items-center justify-center grayscale transition-all duration-300 ease-out drop-shadow-[0_0_5px_rgba(94,145,242,0.1)] p-2"
             style={{
               gridColumn: position.col + 1,
               gridRow: position.row + 1,
@@ -127,14 +149,14 @@ const backgroundPattern = generateBackgroundPattern(120, 12);
         const proximity = Math.pow(Math.max(0, 1 - distance / maxDistance), 2);
 
         if (proximity > 0.01) {
-          icon.style.opacity = (0.8 + proximity * 0.2).toString();
-          icon.style.filter = `grayscale(${100 - proximity * 100}%) drop-shadow(0 0 ${40 + proximity * 40}px rgba(94, 145, 242, ${0.3 + proximity * 0.7}))`;
+          icon.style.opacity = (0.3 + proximity * 0.7).toString();
+          icon.style.filter = `grayscale(${100 - proximity * 100}%) drop-shadow(0 0 ${5 + proximity * 35}px rgba(94, 145, 242, ${0.1 + proximity * 0.9}))`;
           icon.style.transform = `scale(${1 + proximity * 0.8})`;
           icon.style.zIndex = "10";
         } else {
-          icon.style.opacity = "0.80";
+          icon.style.opacity = "0.30";
           icon.style.filter =
-            "grayscale(100%) drop-shadow(0 0 40px rgba(94, 145, 242, 0.3))";
+            "grayscale(100%) drop-shadow(0 0 5px rgba(94, 145, 242, 0.1))";
           icon.style.transform = "scale(1)";
           icon.style.zIndex = "";
         }
@@ -143,9 +165,9 @@ const backgroundPattern = generateBackgroundPattern(120, 12);
 
     const handleMouseLeave = () => {
       icons.forEach((icon) => {
-        icon.style.opacity = "0.80";
+        icon.style.opacity = "0.30";
         icon.style.filter =
-          "grayscale(100%) drop-shadow(0 0 40px rgba(94, 145, 242, 0.3))";
+          "grayscale(100%) drop-shadow(0 0 5px rgba(94, 145, 242, 0.1))";
         icon.style.transform = "scale(1)";
         icon.style.zIndex = "";
       });
