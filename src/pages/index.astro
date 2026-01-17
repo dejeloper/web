@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import HeroImage from "@/components/Hero/HeroImage.astro";
 import HeroText from "@/components/Hero/HeroText.astro";
+import HeroTechBackground from "@/components/Hero/HeroTechBackground.astro";
 import Experence from "@/components/Experence/Experence.astro";
 import Skills from "@/components/Skills/Skills.astro";
 import Projects from "@/components/Projects/Projects.astro";
@@ -15,11 +16,14 @@ const description =
 <Layout title={title} description={description}>
   <main class="flex flex-col justify-center w-full md:mt-0 mx-auto" id="top">
     <div
-      class="md:min-h-screen min-h-[calc(100vh - 64px)] flex justify-center mx-auto items-center flex-col"
+      class="md:min-h-screen min-h-[calc(100vh - 64px)] flex justify-center mx-auto items-center flex-col relative w-full"
     >
+      <!-- Decorative tech background layer - positioned behind hero content, full hero width -->
+      <HeroTechBackground />
+      
       <SectionContainer
         id="inicio"
-        class="md:flex-row flex-col-reverse md:gap-6 md:h-auto h-screen"
+        class="md:flex-row flex-col-reverse md:gap-6 md:h-auto h-screen relative z-20 bg-one/95 backdrop-blur-sm p-8"
       >
         <HeroText />
         <div class="flex justify-center mx-auto w-64">
@@ -27,7 +31,7 @@ const description =
         </div>
       </SectionContainer>
 
-      <SectionContainer id="skills" class="flex p-4">
+      <SectionContainer id="skills" class="flex relative z-20 bg-one/95 backdrop-blur-sm p-8">
         <Skills />
       </SectionContainer>
     </div>
