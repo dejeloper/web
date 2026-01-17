@@ -18,12 +18,12 @@ const description =
     <div
       class="md:min-h-screen min-h-[calc(100vh - 64px)] flex justify-center mx-auto items-center flex-col relative w-full"
     >
-      <!-- Decorative tech background layer - positioned behind hero content, full hero width -->
       <HeroTechBackground />
-      
+
       <SectionContainer
         id="inicio"
         class="md:flex-row flex-col-reverse md:gap-6 md:h-auto h-screen relative z-20 bg-one/95 backdrop-blur-sm p-8"
+        style="border: 5px solid #1564bf;"
       >
         <HeroText />
         <div class="flex justify-center mx-auto w-64">
@@ -31,7 +31,10 @@ const description =
         </div>
       </SectionContainer>
 
-      <SectionContainer id="skills" class="flex relative z-20 bg-one/95 backdrop-blur-sm p-8">
+      <SectionContainer
+        id="skills"
+        class="flex relative z-20 bg-one/95 backdrop-blur-sm p-8"
+      >
         <Skills />
       </SectionContainer>
     </div>
